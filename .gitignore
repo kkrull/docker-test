@@ -1,3 +1,4 @@
 *.swp
 
 .vagrant/
+debug_log
