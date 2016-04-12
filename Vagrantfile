@@ -2,11 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
+  config.vm.define 'docker-test'
   config.vm.box = 'phusion/ubuntu-14.04-amd64'
-  config.vm.define 'docker-test' do |vm_config|
-    vm_config.vm.hostname = 'docker-test'
-  end
-
+  config.vm.hostname = 'docker-test'
   config.vm.synced_folder '../share', '/home/vagrant/src/'
 
   # Network accessible by the host
