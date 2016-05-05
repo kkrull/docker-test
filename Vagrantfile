@@ -6,7 +6,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = 'phusion/ubuntu-14.04-amd64'
   config.vm.hostname = 'docker-test'
   config.vm.synced_folder "#{ENV['HOME']}/git", '/home/vagrant/git/'
-  config.vm.synced_folder "#{ENV['HOME']}/.ssh", '/home/vagrant/host/ssh/'
+  config.ssh.forward_agent = true
 
   # Network accessible by the host
   config.vm.network 'private_network', 
